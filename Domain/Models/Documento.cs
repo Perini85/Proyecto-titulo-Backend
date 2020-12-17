@@ -39,6 +39,7 @@ namespace ProyectoTituloBackend.Domain.Models
 
         public int Activo { get; set; }
 
+        public string imagen { get; set; }
 
     }
 }

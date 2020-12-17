@@ -70,7 +70,6 @@ namespace ProyectoTituloBackend.Persistence.Repositories
 
         public async Task ActualizarDocumento(int id, Documento documento)
         {
-
             _context.Entry(documento).State = EntityState.Modified;
             _context.Update(documento);
             await _context.SaveChangesAsync();

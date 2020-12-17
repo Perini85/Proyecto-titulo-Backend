@@ -78,6 +78,12 @@ namespace ProyectoTituloBackend.Controllers
                     return BadRequest();
                 }
 
+
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                int idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
+
+                documento.UsuarioId = idUsuario;
+                documento.FechaCreacion = DateTime.Now;
                 documento.Activo = 1;
                 await _documentoService.ActualizarDocumento(id, documento);
                 return Ok();

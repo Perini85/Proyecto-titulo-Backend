@@ -90,6 +90,7 @@ namespace ProyectoTituloBackend.Controllers
                     return BadRequest();
                 }
 
+
                 clientes.Activo = 1;
                 //_context.Entry(clientes).State = EntityState.Modified;
                 //_context.Update(clientes);

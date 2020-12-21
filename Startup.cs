@@ -48,7 +48,7 @@ namespace ProyectoTituloBackend
             services.AddScoped<IClienteService, ClienteService>();
             services.AddScoped<IDocumentoService, DocumentoService>();
             services.AddScoped<ITipoDocumentoService, TipoDocumentoService>();
-
+            services.AddScoped<IProductoService, ProductoService>();
 
 
 
@@ -58,6 +58,8 @@ namespace ProyectoTituloBackend
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<IDocumentoRepository, DocumentoRepository>();
             services.AddScoped<ITipodeDocumentoRepository, TipoDocumentoRepository>();
+            services.AddScoped <IProductoRepository ,ProductoRepository>();
+
 
             //Cors
             services.AddCors(options => options.AddPolicy("AllowWebapp",

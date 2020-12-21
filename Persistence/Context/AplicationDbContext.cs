@@ -17,6 +17,9 @@ namespace ProyectoTituloBackend.Persistence.Context
 
         public DbSet<TipoDocumento> TipoDocumentos { get; set; }
 
+        public DbSet<Producto> Productos { get; set; }
+
+
         public AplicationDbContext(DbContextOptions<AplicationDbContext>options): base(options)
         {
 

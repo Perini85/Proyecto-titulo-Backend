@@ -17,8 +17,8 @@ namespace ProyectoTituloBackend.Domain.Models
 
 
         [Required]
-        [Column(TypeName = "varchar(50)")]
-        public string  Valor { get; set; }
+      
+        public int  Valor { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(50)")]
@@ -39,7 +39,6 @@ namespace ProyectoTituloBackend.Domain.Models
 
         public int Activo { get; set; }
 
-        public string imagen { get; set; }
 
         public string Imagen { get; set; }
 

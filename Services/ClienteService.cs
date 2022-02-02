@@ -1,9 +1,7 @@
 ﻿using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Services
@@ -20,10 +18,10 @@ namespace ProyectoTituloBackend.Services
             _clienteRepository = clienteRepository;
         }
 
-        public async Task ActualizarCliente(int id,Clientes clientes)
+        public async Task ActualizarCliente(int id, Clientes clientes)
         {
-            
-            await _clienteRepository.ActualizarCliente( id,clientes);
+
+            await _clienteRepository.ActualizarCliente(id, clientes);
         }
 
         public async Task CreateCliente(Clientes clientes)

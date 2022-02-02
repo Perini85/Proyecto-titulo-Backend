@@ -1,14 +1,11 @@
 ﻿using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Services
 {
-    public class UsuarioService: IUsuarioService
+    public class UsuarioService : IUsuarioService
     {
 
         private readonly IUsuarioRepository _usuarioRepository;
@@ -33,7 +30,7 @@ namespace ProyectoTituloBackend.Services
 
         }
 
-        public async Task<Usuario>  ValidatePassword(int idUsuario, string passwordAnterior)
+        public async Task<Usuario> ValidatePassword(int idUsuario, string passwordAnterior)
         {
 
             return await _usuarioRepository.ValidatePassword(idUsuario, passwordAnterior);
@@ -43,7 +40,7 @@ namespace ProyectoTituloBackend.Services
         public async Task UpdatePassword(Usuario usuario)
         {
 
-             await _usuarioRepository.UpdatePassword(usuario);
+            await _usuarioRepository.UpdatePassword(usuario);
         }
     }
 }

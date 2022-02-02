@@ -2,7 +2,6 @@
 using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Persistence.Context;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,7 +30,7 @@ namespace ProyectoTituloBackend.Persistence.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public  async Task<Producto> BuscarProducto(int idProducto)
+        public async Task<Producto> BuscarProducto(int idProducto)
         {
 
             var producto = await _context.Productos.Where(p => p.Id == idProducto && p.Activo == 1).FirstOrDefaultAsync();

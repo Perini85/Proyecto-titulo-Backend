@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Utils;
+using System;
+using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Controllers
 {
@@ -44,7 +41,8 @@ namespace ProyectoTituloBackend.Controllers
                 string tokenString = JwtConfigurator.GetToken(user, _config);
                 return Ok(new { token = tokenString });
 
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }

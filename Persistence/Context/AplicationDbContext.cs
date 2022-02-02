@@ -1,13 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProyectoTituloBackend.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Persistence.Context
 {
-    public class AplicationDbContext: DbContext
+    public class AplicationDbContext : DbContext
     {
         public DbSet<Usuario> Usuarios { get; set; }
 
@@ -20,7 +16,7 @@ namespace ProyectoTituloBackend.Persistence.Context
         public DbSet<Producto> Productos { get; set; }
 
 
-        public AplicationDbContext(DbContextOptions<AplicationDbContext>options): base(options)
+        public AplicationDbContext(DbContextOptions<AplicationDbContext> options) : base(options)
         {
 
         }

@@ -2,7 +2,6 @@
 using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Persistence.Context;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,17 +32,17 @@ namespace ProyectoTituloBackend.Persistence.Repositories
         public async Task<List<Clientes>> GetListClientes()
         {
 
-            var listClientes = await _context.Clientes.Where(c =>c.Activo ==1).Select(o
-                => new Clientes
-                {
-                    Id= o.Id,
-                    Nombres = o.Nombres,
-                    Apellidos = o.Apellidos,
-                    Rut  = o.Rut,
-                    Correo = o.Correo,
-                    Telefono = o.Telefono
+            var listClientes = await _context.Clientes.Where(c => c.Activo == 1).Select(o
+                  => new Clientes
+                  {
+                      Id = o.Id,
+                      Nombres = o.Nombres,
+                      Apellidos = o.Apellidos,
+                      Rut = o.Rut,
+                      Correo = o.Correo,
+                      Telefono = o.Telefono
 
-                }).ToListAsync();
+                  }).ToListAsync();
 
             return listClientes;
 
@@ -54,7 +53,7 @@ namespace ProyectoTituloBackend.Persistence.Repositories
 
             clientes.Activo = 0;
             _context.Entry(clientes).State = EntityState.Modified;
-          
+
             await _context.SaveChangesAsync();
         }
 
@@ -67,7 +66,7 @@ namespace ProyectoTituloBackend.Persistence.Repositories
         }
 
 
-        public async Task ActualizarCliente( int id,Clientes clientes)
+        public async Task ActualizarCliente(int id, Clientes clientes)
         {
 
 

@@ -2,7 +2,6 @@
 using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Persistence.Context;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,19 +30,19 @@ namespace ProyectoTituloBackend.Persistence.Repositories
         public async Task<List<Documento>> GetListDocumento()
         {
 
-            var listdoc = await _context.Documentos.Where(d =>d.Activo ==1).Select(o
-                                                                   => new Documento
-                                                                      {
-                                                                       Id = o.Id,
-                                                                       TipoDocumentoId = o.TipoDocumentoId,
-                                                                       IdCliente = o.IdCliente,
-                                                                       NumeroDoc = o.NumeroDoc,
-                                                                       UsuarioId = o.UsuarioId,
-                                                                       Valor = o.Valor,
-                                                                       FechaCreacion = o.FechaCreacion
+            var listdoc = await _context.Documentos.Where(d => d.Activo == 1).Select(o
+                                                                     => new Documento
+                                                                     {
+                                                                         Id = o.Id,
+                                                                         TipoDocumentoId = o.TipoDocumentoId,
+                                                                         IdCliente = o.IdCliente,
+                                                                         NumeroDoc = o.NumeroDoc,
+                                                                         UsuarioId = o.UsuarioId,
+                                                                         Valor = o.Valor,
+                                                                         FechaCreacion = o.FechaCreacion
 
 
-                                                                      }).ToListAsync();
+                                                                     }).ToListAsync();
             return listdoc;
 
         }
@@ -62,8 +61,8 @@ namespace ProyectoTituloBackend.Persistence.Repositories
         public async Task<Documento> GetDocumento(int idDocumento)
         {
 
-        var doc = await _context.Documentos.Where(d => d.Id == idDocumento
-        && d.Activo == 1).FirstOrDefaultAsync();
+            var doc = await _context.Documentos.Where(d => d.Id == idDocumento
+            && d.Activo == 1).FirstOrDefaultAsync();
             return doc;
 
         }

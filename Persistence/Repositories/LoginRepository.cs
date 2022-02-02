@@ -2,14 +2,12 @@
 using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Persistence.Context;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Persistence.Repositories
 {
-    public class LoginRepository: ILoginRepository
+    public class LoginRepository : ILoginRepository
     {
 
         private readonly AplicationDbContext _context;

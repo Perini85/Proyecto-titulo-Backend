@@ -2,17 +2,15 @@
 using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Persistence.Context;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Persistence.Repositories
 {
-    public class UsuarioRepository: IUsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
 
-        private readonly AplicationDbContext  _context;
+        private readonly AplicationDbContext _context;
 
         public UsuarioRepository(AplicationDbContext context)
         {
@@ -29,7 +27,7 @@ namespace ProyectoTituloBackend.Persistence.Repositories
         {
 
             var validateExistence = await _context.Usuarios.AnyAsync(u => u.nombreUsuario == usuario.nombreUsuario);
-                return validateExistence;
+            return validateExistence;
         }
 
         public async Task<Usuario> ValidatePassword(int idUsuario, string passwordAnterior)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +6,9 @@ using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.DTO;
 using ProyectoTituloBackend.Utils;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Controllers
 {
@@ -30,7 +28,7 @@ namespace ProyectoTituloBackend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Usuario usuario)
+        public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
 
             try
@@ -43,12 +41,13 @@ namespace ProyectoTituloBackend.Controllers
                 }
 
                 usuario.Password = Encriptar.EncriptarPassword(usuario.Password);
-                await  _usuarioService.SaveUser(usuario);
+                await _usuarioService.SaveUser(usuario);
 
 
-                return Ok(new { message ="Usuario registrado con exito"});
+                return Ok(new { message = "Usuario registrado con exito" });
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
                 return BadRequest(ex.Message);
@@ -81,7 +80,8 @@ namespace ProyectoTituloBackend.Controllers
                 }
 
             }
-            catch(Exception ){
+            catch (Exception)
+            {
 
                 return BadRequest();
             }

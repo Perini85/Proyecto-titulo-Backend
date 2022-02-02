@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Utils;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Controllers
 {
@@ -19,7 +17,7 @@ namespace ProyectoTituloBackend.Controllers
         private readonly IDocumentoService _documentoService;
 
 
-        public DocumentoController( IDocumentoService documentoService)
+        public DocumentoController(IDocumentoService documentoService)
         {
 
             _documentoService = documentoService;
@@ -68,12 +66,12 @@ namespace ProyectoTituloBackend.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> put(int id, [FromBody]Documento documento)
+        public async Task<IActionResult> put(int id, [FromBody] Documento documento)
         {
             try
             {
-            
-             if(id != documento.Id)
+
+                if (id != documento.Id)
                 {
                     return BadRequest();
                 }
@@ -116,16 +114,16 @@ namespace ProyectoTituloBackend.Controllers
 
 
         [HttpDelete("{idDocumento}")]
-        public async Task<IActionResult>  Delete(int idDocumento)
+        public async Task<IActionResult> Delete(int idDocumento)
         {
             try
             {
 
-           var documento = await _documentoService.BuscarDocumento(idDocumento);
+                var documento = await _documentoService.BuscarDocumento(idDocumento);
 
-            if(documento == null)
+                if (documento == null)
                 {
-              return BadRequest(new { message = "No se encontro ningun documento" });
+                    return BadRequest(new { message = "No se encontro ningun documento" });
                 }
 
                 await _documentoService.EliminarDocumento(documento);

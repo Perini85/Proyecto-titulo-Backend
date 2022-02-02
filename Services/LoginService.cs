@@ -1,14 +1,11 @@
 ﻿using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Services
 {
-    public class LoginService: ILoginService
+    public class LoginService : ILoginService
     {
 
         private readonly ILoginRepository _loginRepository;

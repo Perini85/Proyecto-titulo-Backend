@@ -1,9 +1,7 @@
 ﻿using ProyectoTituloBackend.Domain.IRepositories;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Services
@@ -31,7 +29,7 @@ namespace ProyectoTituloBackend.Services
 
         public async Task CreateDocumento(Documento documento)
         {
-           await  _documentoRepository.CreateDocumento(documento);
+            await _documentoRepository.CreateDocumento(documento);
         }
 
         public async Task EliminarDocumento(Documento documento)
@@ -52,5 +50,5 @@ namespace ProyectoTituloBackend.Services
 
 
     }
-  
+
 }

@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProyectoTituloBackend.Domain.IServices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Controllers
@@ -34,7 +31,7 @@ namespace ProyectoTituloBackend.Controllers
             try
             {
 
-                var listTipoDoc= await _tipoDocumentoService.GetListTipoDocumento();
+                var listTipoDoc = await _tipoDocumentoService.GetListTipoDocumento();
                 return Ok(listTipoDoc);
 
 

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
-using ProyectoTituloBackend.Persistence.Context;
 using ProyectoTituloBackend.Utils;
+using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Controllers
 {
@@ -25,16 +21,16 @@ namespace ProyectoTituloBackend.Controllers
 
 
 
-        public ClienteController(IClienteService clienteService )
+        public ClienteController(IClienteService clienteService)
         {
             _clienteService = clienteService;
 
-            
+
         }
 
-       
+
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Clientes clientes)
+        public async Task<IActionResult> Post([FromBody] Clientes clientes)
         {
 
             try
@@ -79,13 +75,13 @@ namespace ProyectoTituloBackend.Controllers
 
 
         [HttpPut("{id}")]
-        public async Task <IActionResult> put(int id,[FromBody]Clientes clientes)
+        public async Task<IActionResult> put(int id, [FromBody] Clientes clientes)
         {
 
             try
             {
-               
-                if(id != clientes.Id)
+
+                if (id != clientes.Id)
                 {
                     return BadRequest();
                 }
@@ -98,7 +94,7 @@ namespace ProyectoTituloBackend.Controllers
                 //return Ok();
 
                 await _clienteService.ActualizarCliente(id, clientes);
-                    return Ok();
+                return Ok();
 
             }
             catch (Exception ex)
@@ -117,7 +113,8 @@ namespace ProyectoTituloBackend.Controllers
                 return Ok(cliente);
 
 
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -127,7 +124,7 @@ namespace ProyectoTituloBackend.Controllers
 
         //[Route("Eliminar")]
         [HttpDelete("{idCliente}")]
-        public async Task<IActionResult> /*ActionResult*/ Delete(int idCliente )
+        public async Task<IActionResult> /*ActionResult*/ Delete(int idCliente)
         {
             try
             {

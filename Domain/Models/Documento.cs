@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Domain.Models
 {
@@ -18,7 +15,7 @@ namespace ProyectoTituloBackend.Domain.Models
 
         [Required]
         [Column(TypeName = "varchar(50)")]
-        public string  Valor { get; set; }
+        public string Valor { get; set; }
 
         [Required]
         [Column(TypeName = "varchar(50)")]
@@ -32,13 +29,14 @@ namespace ProyectoTituloBackend.Domain.Models
 
         public TipoDocumento TipoDocumento { get; set; }
 
-        
+
         public int UsuarioId { get; set; }
 
         public Usuario Usuario { get; set; }
 
         public int Activo { get; set; }
 
+        public string imagen { get; set; }
 
         public string Imagen { get; set; }
 

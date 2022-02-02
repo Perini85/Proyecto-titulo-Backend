@@ -4,8 +4,6 @@ using ProyectoTituloBackend.Domain.IServices;
 using ProyectoTituloBackend.Domain.Models;
 using ProyectoTituloBackend.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -77,7 +75,7 @@ namespace ProyectoTituloBackend.Controllers
 
             try
             {
-                if(id != producto.Id)
+                if (id != producto.Id)
                 {
                     return BadRequest();
                 }
@@ -107,7 +105,7 @@ namespace ProyectoTituloBackend.Controllers
             try
             {
 
-                var producto = await  _productoService.GetProducto(idProducto);
+                var producto = await _productoService.GetProducto(idProducto);
                 return Ok(producto);
             }
             catch (Exception ex)
@@ -123,7 +121,7 @@ namespace ProyectoTituloBackend.Controllers
             {
                 var producto = await _productoService.BuscarProducto(idProducto);
 
-                if(producto == null)
+                if (producto == null)
                 {
                     return BadRequest(new { message = "No se encontro ningun producto" });
                 }

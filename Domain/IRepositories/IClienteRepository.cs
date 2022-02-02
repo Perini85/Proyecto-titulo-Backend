@@ -1,12 +1,10 @@
 ﻿using ProyectoTituloBackend.Domain.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ProyectoTituloBackend.Domain.IRepositories
 {
-   public interface IClienteRepository
+    public interface IClienteRepository
     {
 
         Task CreateCliente(Clientes clientes);
@@ -15,9 +13,9 @@ namespace ProyectoTituloBackend.Domain.IRepositories
 
         Task EliminarCliente(Clientes clientes);
 
-        Task<List<Clientes>>GetListClientes();
+        Task<List<Clientes>> GetListClientes();
 
-        Task ActualizarCliente( int id,Clientes clientes);
+        Task ActualizarCliente(int id, Clientes clientes);
 
         Task<Clientes> BuscarCliente(int idCliente);
 
